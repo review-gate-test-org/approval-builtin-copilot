@@ -1,0 +1,4 @@
+# Catch-all: anything not matched below (e.g. README.md) is owned by a human.
+*         @venetrius
+/backend/ @review-gate-test-org/backend
+/client/  @review-gate-test-org/frontend
