@@ -31,7 +31,7 @@ class TodoServiceTest {
   }
 
   @Test
-  void reportsEmptiness() {
+  void tracksEmptinessAcrossAddAndRemove() {
     assertTrue(service.isEmpty());
     service.add("ship it");
     assertFalse(service.isEmpty());
