@@ -24,3 +24,7 @@ Client (Node 22):
 ```bash
 cd client && npm ci && npm run dev
 ```
+
+## Behavior
+
+Todos are trimmed when added. `remove` trims its argument the same way, so `remove("  ship it ")` removes `"ship it"`.
