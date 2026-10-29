@@ -53,7 +53,7 @@ Two further observations, both **verified**:
 - **Coarse path scope (verified for one glob).** It is a single list of up to 15 globs for the whole repository (the 15 limit is from the docs, unverified here). It applies to the whole pull request: one file outside the list means Copilot's approval does not count. There is no per-team or per-path policy, and no way to say "Copilot may approve backend, but the frontend team must approve client."
 - **Only Copilot (by design, per GitHub docs).** The only automated approver this path supports is GitHub's own Copilot code review. You cannot plug in your own review agent, policy, or audit trail.
 - **The verdict is non-deterministic (unverified).** The same change may get a different verdict on another run. Each scenario was tested once.
-- **New pushes dismiss Copilot's approval (per GitHub docs, unverified here).** Copilot then has to review again.
+- **New pushes dismiss Copilot's approval (verified).** This was tested on the throwaway [#4](https://github.com/review-gate-test-org/approval-builtin-copilot/pull/4), which is now closed. After Copilot approved, a new commit dismissed the approval within about 3 seconds, and the PR switched from mergeable to blocked. Because Copilot reviews every push, it re-reviewed and approved again about 75 seconds later, and the PR became mergeable again. A pull request limited to backend files can therefore keep changing and stay mergeable without a human ever reviewing it.
 
 ## Sources
 
